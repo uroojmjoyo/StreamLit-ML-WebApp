@@ -6,9 +6,6 @@
 
 import pandas as pd   
 
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.metrics import accuracy_score
-
 from sklearn import tree
 
 import seaborn as sns
