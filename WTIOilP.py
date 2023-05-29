@@ -3,7 +3,7 @@
 
 # In[13]:
 
-pip install --upgrade streamlit
+pip install sklearn
 
 import pandas as pd   
 from utils import DataLoader
