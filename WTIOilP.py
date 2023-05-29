@@ -6,9 +6,6 @@
 
 import pandas as pd   
 
-import time
-
-
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import accuracy_score
 
@@ -70,7 +67,7 @@ import io
 # In[12]:
 
 
-file_path = "F:/Urooj/Masters/IBA/ML/assign 3/WTI Price.csv"
+file_path = "WTI Price.csv"
 if os.path.isfile(file_path):
     df = pd.read_csv(file_path)
 else:
@@ -84,7 +81,7 @@ X = df.drop('WTI_Spot', axis=1).copy()
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
 st.set_page_config(layout="wide")
-image = Image.open(r"F:\Urooj\Masters\IBA\ML\assign 3\10-Applications-of-Machine-Learning-in-Oil-Gas1.jpg")
+image = Image.open(r"10-Applications-of-Machine-Learning-in-Oil-Gas1.jpg")
 
 # Display the image above the title
 st.image(image)
