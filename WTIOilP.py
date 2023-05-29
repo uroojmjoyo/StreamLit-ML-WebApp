@@ -5,16 +5,7 @@
 
 
 import pandas as pd   
-
-from sklearn import tree
-
-import seaborn as sns
-
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.preprocessing import MinMaxScaler
-
-
 from sklearn.pipeline import Pipeline
 from sklearn.datasets import make_regression
 
@@ -36,7 +27,6 @@ from lightgbm import LGBMRegressor
 import xgboost as xgb
 import lightgbm as lgb
 from sklearn.metrics import roc_curve, roc_auc_score
-from sklearn.metrics import roc_auc_score
 import warnings
 warnings.filterwarnings('ignore')
 
