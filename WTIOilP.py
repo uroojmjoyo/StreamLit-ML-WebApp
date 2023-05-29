@@ -273,8 +273,7 @@ with col2:
 # Display Lime explanation
 st.subheader("Lime Explanation")
 if st.button('LIME'):
-    st.write('''It shows a table that ranks the features based on their importance for the prediction and provides the 
-             corresponding weight or contribution of each feature.''')
+    st.write('It shows a table that ranks the features based on their importance for the prediction and provides the corresponding weight or contribution of each feature.')
     html = explanation.as_html()
 # Display the Lime plot in Streamlit
     components.html(html, height=700, width=1200)
@@ -289,7 +288,6 @@ if st.button("SHAPLEY"):
              with positive and negative values, representing the positive and negative contributions of the features. 
              The length of each bar indicates the magnitude of the feature's contribution. The bars are arranged in 
              descending order based on their contribution, with the most significant features at the top.''')
-    st.write('')
     st_shap(shap.force_plot(shap_values[0]))
     st.subheader('SHAP Force Plot (Graph):')
     st.write('''The force plot visualizes the Shapley values of the features for multiple instances or predictions. It provides 
