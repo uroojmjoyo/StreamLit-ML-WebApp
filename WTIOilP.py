@@ -5,44 +5,14 @@
 
 
 import pandas as pd   
-
-import time
-
-
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.metrics import accuracy_score
-
-from sklearn import tree
-
-import seaborn as sns
-
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.preprocessing import MinMaxScaler
-
-
-from sklearn.pipeline import Pipeline
-from sklearn.datasets import make_regression
-
+from utils import DataLoader
 from numpy import mean
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 import plotly.graph_objs as go
-from sklearn.linear_model import LogisticRegression
-
-from sklearn.model_selection import RandomizedSearchCV
-from scipy.stats import randint as sp_randint, uniform as sp_uniform
-
-import time
-
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import GradientBoostingRegressor
-from xgboost import XGBRegressor
 from lightgbm import LGBMRegressor
-import xgboost as xgb
 import lightgbm as lgb
-from sklearn.metrics import roc_curve, roc_auc_score
-from sklearn.metrics import roc_auc_score
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -69,22 +39,13 @@ import io
 
 # In[14]:
 
-
-file_path = "F:/Urooj/Masters/IBA/ML/assign 3/WTI Price.csv"
-if os.path.isfile(file_path):
-    df = pd.read_csv(file_path)
-else:
-    st.error("File not found. Please check the file path.")
-
-df.drop('DATE', axis=1, inplace=True)
-df.fillna(df.mean(), inplace=True)
-
-y = df['WTI_Spot'].copy()
-X = df.drop('WTI_Spot', axis=1).copy()
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+data_loader = DataLoader()
+data_loader.load_dataset()
+# Split the data for evaluation
+X_train, X_test, y_train, y_test = data_loader.get_data_split()
 
 st.set_page_config(layout="wide")
-image = Image.open(r"F:\Urooj\Masters\IBA\ML\assign 3\10-Applications-of-Machine-Learning-in-Oil-Gas1.jpg")
+image = Image.open(r"10-Applications-of-Machine-Learning-in-Oil-Gas1.jpg")
 
 # Display the image above the title
 st.image(image)
