@@ -3,6 +3,7 @@
 
 # In[13]:
 
+pip install --upgrade streamlit
 
 import pandas as pd   
 from utils import DataLoader
