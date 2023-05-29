@@ -7,3 +7,4 @@ shap
 interpret
 dice-ml
 streamlit-shap
+sklearn
