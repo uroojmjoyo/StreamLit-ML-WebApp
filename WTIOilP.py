@@ -6,8 +6,6 @@
 
 import pandas as pd   
 import time
-
-from sklearn.feature_selection import SequentialFeatureSelector
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import accuracy_score
 
