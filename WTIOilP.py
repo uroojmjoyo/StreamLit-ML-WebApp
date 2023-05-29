@@ -234,7 +234,7 @@ shap_values = explainer(X_test)
 shap.plots.waterfall(shap_values[0])
 
 # Define a function to display SHAPLEY explanations in Streamlit
-def st_shap(plot, height=None):
+def st_shap(plot, height=None, width=None):
     shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
     components.html(shap_html, height=height)
 
@@ -277,7 +277,7 @@ if st.button('LIME'):
              corresponding weight or contribution of each feature.''')
     html = explanation.as_html()
 # Display the Lime plot in Streamlit
-    components.html(html, height=800)
+    components.html(html, height=700, width=1200)
     
 # Display SHAPLEY 
 st.subheader("SHAPLEY Explanation")
