@@ -12,6 +12,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import plotly.graph_objs as go
 from sklearn.ensemble import RandomForestRegressor
 from lightgbm import LGBMRegressor
+from pycaret.regression import load_model, predict_model
 import lightgbm as lgb
 import warnings
 warnings.filterwarnings('ignore')
@@ -211,10 +212,10 @@ col1, col2 = st.columns((1,2))
 
 #XAI
 
-#lgbm = LGBMRegressor()
-# Fit the model to your training data
-#lgbm1=lgbm.fit(X_train, y_train)
-model = loaded_model
+lgbm = LGBMRegressor()
+#Fit the model to your training data
+lgbm1=lgbm.fit(X_train, y_train)
+model = lgbm1
 
 #LIME
 explainer = LimeTabularExplainer(training_data=X_train.values, mode='regression', feature_names=X_train.columns.tolist())
