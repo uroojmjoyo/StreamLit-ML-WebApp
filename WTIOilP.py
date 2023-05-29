@@ -234,7 +234,7 @@ shap_values = explainer(X_test)
 shap.plots.waterfall(shap_values[0])
 
 # Define a function to display SHAPLEY explanations in Streamlit
-def st_shap(plot, height=None, width=None):
+def st_shap(plot, height=None):
     shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
     components.html(shap_html, height=height)
 
@@ -297,7 +297,7 @@ if st.button("SHAPLEY"):
              vertical column of bars, where each bar corresponds to a feature's contribution to the prediction. The color of 
              the bar represents the feature's value, with blue indicating lower values and red indicating higher values. The 
              length of the bar represents the magnitude of the feature's contribution.''')
-    st_shap(shap.plots.force(shap_values), height=800, width=1200)
+    st_shap(shap.plots.force(shap_values), height=800)
     
 st.subheader("CounterFactual Explanation")
 if st.button("CounterFactual"):
