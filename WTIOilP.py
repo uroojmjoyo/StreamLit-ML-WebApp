@@ -3,8 +3,6 @@
 
 # In[13]:
 
-pip install sklearn
-
 import pandas as pd   
 from utils import DataLoader
 from numpy import mean
